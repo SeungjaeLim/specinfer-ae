@@ -11,12 +11,8 @@ export LD_LIBRARY_PATH=$UCX_DIR/lib:$LD_LIBRARY_PATH
 
 start_time=$(date +%s)
 
-python ./FlexFlow/inference/utils/download_hf_model.py --half-precision-only JackFram/llama-68m
-python ./FlexFlow/inference/utils/download_hf_model.py --half-precision-only huggyllama/llama-7b 
-python ./FlexFlow/inference/utils/download_hf_model.py --half-precision-only huggyllama/llama-65b
 python ./FlexFlow/inference/utils/download_hf_model.py --half-precision-only facebook/opt-125m
-python ./FlexFlow/inference/utils/download_hf_model.py --half-precision-only facebook/opt-13b
-python ./FlexFlow/inference/utils/download_hf_model.py --half-precision-only facebook/opt-30b
+python ./FlexFlow/inference/utils/download_hf_model.py --half-precision-only facebook/opt-6.7b
 
 end_time=$(date +%s)
 execution_time=$((end_time - start_time))

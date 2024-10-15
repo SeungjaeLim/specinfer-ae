@@ -19,21 +19,21 @@ preprocess:
 
 build:
 	@echo "Building Docker image"
-	@docker build . -t specinfer
+	@docker build . -t specinfer2
 
 run:
 	@echo "Booting up Docker Container"
-	@docker run -it --gpus '"device=3"' --ipc=host --name specinfer -v `pwd`:/workspace specinfer:latest /bin/bash
+	@docker run -it --gpus '"device=2"' --ipc=host --name specinfer2 -v `pwd`:/workspace specinfer:latest /bin/bash
 
 up: build run
 
 rm: 
 	@echo "Removing Docker container"
-	@docker rm specinfer
+	@docker rm specinfer2
 
 stop:
 	@echo "Stopping Docker container"
-	@docker stop specinfer
+	@docker stop specinfer2
 
 reset: stop rm
 
